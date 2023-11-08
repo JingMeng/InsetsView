@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Build
 import android.view.View
 import android.view.Window
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import com.dtrung98.insetsview.R
 import java.util.function.BinaryOperator
@@ -20,6 +21,7 @@ import java.util.function.BinaryOperator
  *
  *      + Android below 21
  */
+@RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
 fun Window.setUpSystemUIVisibility(light: Boolean) {
     if (light) {
         setUpLightSystemUIVisibility()
@@ -28,6 +30,7 @@ fun Window.setUpSystemUIVisibility(light: Boolean) {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
 fun Window.setUpLightSystemUIVisibility() {
 
     decorView.systemUiVisibility = when {
@@ -67,6 +70,7 @@ fun Window.setUpLightSystemUIVisibility() {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
 fun Window.setUpDarkSystemUIVisibility() {
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
